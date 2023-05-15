@@ -1,0 +1,77 @@
+public class Main
+{
+    public class Node {
+        int data;
+        Node next=null;
+        Node(int data)
+        {
+            this.data=data;
+            this.next=null;
+        }
+    }
+        public Node head=null;
+         public Node tail=null;
+         
+        public void addNode(int data)
+        {
+            Node newNode=new Node(data);
+            if(head==null)
+            {
+                head=newNode;
+                tail=newNode;
+               newNode.next=head;
+                }
+            else
+            {
+                tail.next=newNode;
+                tail=newNode;
+                tail.next=head;
+            }
+        }
+        
+        public void Delete()
+        {
+            if(head==null)
+            {
+               return;
+            }
+            else
+            {
+                if(head!=tail)
+                {
+                    Node currentpoint=head;
+                    while(currentpoint.next!=tail)
+                    {
+                        currentpoint=currentpoint.next;
+                    }
+                    tail=currentpoint;
+                    tail.next=head;
+                }
+                else
+                {
+                  head=tail=null;  
+                }
+            }
+        }
+        
+        public void Display()
+        {
+            Node current=head;
+             System.out.println("Nodes of the circular linked list: ");  
+             do{  
+                System.out.print(" "+ current.data);  
+                current = current.next;  
+            }while(current != head);  
+            System.out.println();  
+        }  
+	public static void main(String[] args) {
+	 Main obj=new Main();
+	 obj.addNode(5);
+	 obj.addNode(9);
+	 obj.addNode(3);
+	 obj.addNode(6);
+	 obj.Display();
+	 obj.Delete();
+	 obj.Display();
+	}
+}
