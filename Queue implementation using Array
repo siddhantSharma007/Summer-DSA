@@ -1,0 +1,57 @@
+	 int f=-1;
+	 int r=-1;
+	 int a[]=new int[10];
+	 
+	 Main()
+	 {
+		 f=0;
+		 r=0;
+	 }
+	 
+	 
+	 public void Enqueue(int data)
+	 {
+		 if(r==a.length-1)
+		 {
+			 System.out.println("Queue is full");
+		 }
+		 else
+		 {
+				 a[r]=data;
+				 r=r+1;
+		 }
+	 }
+	 
+	 public void Dequeue()
+	 {
+		 if(f==-1 && r==-1)
+		 {
+			 System.out.println("Queue is empty");
+		 }
+		 else
+		 {
+			 System.out.println("Item Deleted");
+			 f=f+1;
+		 }
+	 }
+	 public void Display()
+	 {
+		 for(int i=f;i<=r;i++)
+		 {
+			 System.out.println("elements of queue are:-" +a[i]);
+		 }
+	 }
+
+	public static void main(String[] args) {
+		Main obj=new Main();
+		obj.Enqueue(1);
+		obj.Enqueue(2);
+		obj.Enqueue(3);
+		obj.Enqueue(4);
+		obj.Display();
+		obj.Dequeue();
+		obj.Display();
+
+	}
+
+}
