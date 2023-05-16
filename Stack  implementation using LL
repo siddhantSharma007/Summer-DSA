@@ -1,0 +1,63 @@
+package DSA;
+
+public class Stack
+{
+	
+  class Node {
+	  int data;
+		Node next;
+		Node(int data)
+		{
+			this.data=data;
+			this.next=next;
+		}
+  }
+		Node top=null;
+  
+  public void Push(int data)
+  {
+	  Node newnode=new Node(data);
+	  if(top==null)
+	  {
+		  top=newnode;
+	  }
+	  else
+	  {
+		  newnode.next=top;
+		  top=newnode;
+	  }
+  }
+  
+  public void Pop()
+  {
+	  if(top==null)
+	  {
+		  System.out.println("Stack Empty");
+	  }
+	  else
+	  {
+		  System.out.println("item is deleted");
+		  top=top.next;
+	  }
+  }
+  
+  public void Display()
+  {
+	  Node temp=top;
+	  while(temp!=null)
+	  {
+		  System.out.println("Elements are:-" +temp.data);
+		  temp=temp.next;
+	  }
+  }
+	public static void main(String[] args) {
+		 Stack obj=new Stack();
+		 obj.Push(2);
+		 obj.Push(1);
+		 obj.Push(4);
+		 obj.Push(5);
+		 obj.Display();
+		 obj.Pop();
+		 obj.Display();
+	}
+  }
