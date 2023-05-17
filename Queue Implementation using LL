@@ -1,0 +1,66 @@
+package DSA;
+
+public class Queue
+{
+	
+  class Node {
+	  int data;
+		Node next;
+		Node(int data)
+		{
+			this.data=data;
+			this.next=next;
+		}
+  }
+		Node f=null;
+		Node r=null;
+  
+  public void Enqueue(int data)
+  {
+	  Node newnode=new Node(data);
+	  if(f==null && r==null)
+	  {
+		  f=newnode;
+		  r=newnode;
+	  }
+	  else
+	  {
+		  r.next=newnode;
+		  r=newnode;
+	  }
+  }
+  
+  public void Dequeue()
+  {
+	  if(f==null)
+	  {
+		  System.out.println("Queue Empty");
+	  }
+	  else
+	  {
+		  System.out.println("item is deleted");
+		  f=f.next;
+	  }
+  }
+  
+  public void Display()
+  {
+	  Node temp=f;
+	  while(temp!=null)
+	  {
+		  System.out.println("Elements are:-" +temp.data);
+		  temp=temp.next;
+	  }
+  }
+	public static void main(String[] args) {
+		 Queue obj=new Queue();
+		 obj.Enqueue(1);
+		 obj.Enqueue(2);
+		 obj.Enqueue(3);
+		 obj.Enqueue(4);
+		 obj.Display();
+		 obj.Dequeue();
+		 obj.Display();
+		
+	}
+  }
