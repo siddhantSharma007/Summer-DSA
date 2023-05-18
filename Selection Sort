@@ -1,0 +1,38 @@
+package DSA;
+
+public class SelectionSort {
+	public void Insert(int a[])
+	{
+		 int n = a.length;
+	
+	        for (int i = 0; i < n-1; i++)
+	        {
+	            int min_idx = i;
+	            for (int j = i+1; j < n; j++)
+	                if (a[j] < a[min_idx])
+	                    min_idx = j;
+	 
+	            int temp = a[min_idx];
+	            a[min_idx] = a[i];
+	            a[i] = temp;
+	        }
+	    }
+
+	
+	public void PrintArray(int a[])
+	{
+		int n=a.length;
+		for(int i=0;i<n;i++)
+		{
+			System.out.println("Elements are:-" +a[i]);
+		}
+	}
+
+	public static void main(String[] args) {
+		int a[] = { 92, 50, 5, 20, 11, 22 };  
+	    SelectionSort i1 = new SelectionSort();  
+	    i1.Insert(a);
+	    i1.PrintArray(a);
+	}
+
+}
