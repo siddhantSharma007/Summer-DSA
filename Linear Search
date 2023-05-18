@@ -1,0 +1,26 @@
+package DSA;
+
+public class Linear {
+	
+	public int LinearSearch(int  a[],int key)
+	{
+		for(int i=0;i<a.length;i++)
+		{
+			if(a[i]==key)
+			{
+				System.out.println("element found at:--" +i);
+				
+			}
+			
+		}
+		return -1;
+	}
+
+	public static void main(String[] args) {
+		int a[]= {2,5,8,3,1,7};
+		int key=7;
+		Linear obj=new Linear();
+        obj.LinearSearch(a, key);
+	}
+
+}
