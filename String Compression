@@ -1,0 +1,24 @@
+public class Main {
+    public static void main(String[] args) {
+        String str = "aaabbccds";
+        StringBuilder res = new StringBuilder();
+
+        int count = 1; 
+        for (int i = 1; i < str.length(); i++) {
+            char currentChar = str.charAt(i);
+            char previousChar = str.charAt(i - 1);
+
+            if (currentChar == previousChar) {
+                count++;
+            } else {
+                res.append(previousChar).append(count); 
+                count = 1;
+            }
+        }
+
+        // Append the last character and its count
+res.append(str.charAt(str.length() - 1)).append(count);
+
+        System.out.println(res.toString());
+    }
+}
