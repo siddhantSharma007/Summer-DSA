@@ -1,0 +1,20 @@
+public class Main {
+    public static void main(String[] args) {
+        String str = "abc";
+        StringBuilder res = new StringBuilder();
+
+        // Include the first character in the result
+        res.append(str.charAt(0));
+
+        for (int i = 1; i < str.length(); i++) {
+            char ch = str.charAt(i);
+            char ch1 = str.charAt(i - 1);
+
+            if (ch != ch1) {
+                res.append(ch);
+            }
+        }
+
+        System.out.print(res.toString());
+    }
+}
