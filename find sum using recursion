@@ -1,0 +1,15 @@
+public class Main
+{
+    public static void findrecur(int n,int sum)
+    {
+        if(n<1)
+        {
+            System.out.print("sum:-" +sum);
+            return;
+        }
+        findrecur(n-1,sum+n);
+    }
+	public static void main(String[] args) {
+		findrecur(10,0);
+	}
+}
