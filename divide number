@@ -1,0 +1,33 @@
+import java.util.*;
+public class Main
+{   
+    public static void remainder(int n,int d)
+    {
+        String res="";
+        ArrayList<Integer> rem=new ArrayList<>();
+        int q=n/d;
+        rem.add(n%d);
+        
+        while(q!=0)
+        {
+            rem.add(q%d);
+            q=q/d;
+        }
+        for (int i=0;i<rem.size() ;i++ )
+        if(rem.get(i)>9)
+        {
+             res = (char) (rem.get (i) - 9 + 64) + res;
+        }
+        else
+        {
+            res=rem.get(i)+res;
+        }
+        System.out.println(res);
+    }
+    
+	public static void main(String[] args) {
+	   int n=718;
+	   int d=12;
+	   remainder(n,d);
+	}
+}
