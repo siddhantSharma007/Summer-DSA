@@ -1,0 +1,50 @@
+import java.util.*;
+public class Main
+{
+    public static void findEvenOdd(int arr[])
+    {
+       ArrayList<Integer> even=new ArrayList<>();
+       ArrayList<Integer> odd=new ArrayList<>();
+       
+       int largest=Integer.MIN_VALUE;
+       int largest1=Integer.MIN_VALUE;
+        int slargest=Integer.MIN_VALUE;
+       int slargest1=Integer.MIN_VALUE;
+       
+       for(int i=0;i<arr.length;i++)
+       {
+           if(i%2==0)
+           {
+               even.add(arr[i]);
+           }
+           else
+           {
+               odd.add(arr[i]);
+           }
+       }
+       Collections.sort(even);
+       for(int i=0;i<even.size();i++)
+       {
+           if(even.get(i)>largest)
+           {
+               slargest=largest;
+               largest=even.get(i);
+           }
+       }
+       Collections.sort(odd);
+       for(int i=0;i<odd.size();i++)
+       {
+           if(odd.get(i)>largest1)
+           {
+               slargest1=largest1;
+               largest1=odd.get(i);
+           }
+       }
+    
+       System.out.println(slargest1+slargest);
+    }
+	public static void main(String[] args) {
+		int arr[]={3 ,2 ,1, 7, 5 ,4};
+		findEvenOdd(arr);
+	}
+}
