@@ -1,0 +1,36 @@
+import java.util.*;
+public class Main
+{
+    public static String moveHypen(String str)
+    {
+        StringBuilder sb=new StringBuilder();
+        int count=0;
+        String res="";
+        for(int i=0;i<str.length();i++)
+        {
+            char c=str.charAt(i);
+            if(c=='-')
+            {
+                count++;
+            }
+            if(c=='-')
+            {
+                continue;
+            }
+            else
+            {
+                res = res + c;
+            }
+        }
+         for(int j=0;j<count;j++)
+            {
+                sb.append('-');
+            }
+            sb.append(res);
+        return sb.toString();
+    }
+	public static void main(String[] args) {
+	  String str="String-Compare";
+	    System.out.println(moveHypen(str));
+	}
+}
