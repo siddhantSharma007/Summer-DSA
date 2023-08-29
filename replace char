@@ -1,0 +1,31 @@
+import java.util.*;
+public class Main
+{
+  public static void replaceChar(String str,char ch1,char ch2)
+  {
+      String res="";
+      for(int i=0;i<str.length();i++)
+      {
+          char c=str.charAt(i);
+          if(c==ch1)
+          {
+              res=res +ch2;
+          }
+          else if(c==ch2)
+          {
+              res=res+ch1;
+          }
+          else
+          {
+         res=res+c; 
+          }
+      }
+       System.out.println(res);
+  }
+	public static void main(String[] args) {
+	  String str= "apples";
+     char ch1='a';
+      char  ch2='p';
+	   replaceChar(str,ch1,ch2);
+	}
+}
