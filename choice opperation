@@ -1,0 +1,38 @@
+import java.util.*;
+public class Main
+{
+  public static void choiceOperation(int c,int a,int b)
+  {
+      int result=0;
+      switch(c)
+      {
+          case 1: result=a+b;
+          break;
+          
+          case 2: result=a-b;
+          break;
+          
+           case 3: result=a*b;
+          break;
+          
+          case 4:
+                if (b != 0) {
+                    result = a / b; 
+                } else {
+                    System.out.println("Cannot divide by zero.");
+                }
+                break;
+
+            default:
+                System.out.println("Invalid choice.");
+        }
+
+        System.out.println("Result: " + result);
+    }
+	public static void main(String[] args) {
+	  int c=2;
+	  int a=12;
+	  int b=16;
+	  choiceOperation(c,a,b);
+	}
+}
